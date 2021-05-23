@@ -25,6 +25,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { PromqlEditorComponent } from './component/promql-editor/promql-editor.component';
 import { FormsModule } from '@angular/forms';
 import { AngularSplitModule } from 'angular-split';
+import { PageModule } from './component/page/page.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AngularSplitModule } from 'angular-split';
     MatTooltipModule,
     MatToolbarModule,
     PromqlEditorComponent,
-    AngularSplitModule
+    AngularSplitModule,
+    PageModule
   ],
   imports: [
     CommonModule,

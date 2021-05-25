@@ -32,19 +32,19 @@
           kind
         </div>
         <div class="value-boxed">
-          {{dashboard.spec.variables[variable.key].kind}}
+          {{variable.value.kind}}
         </div>
       </div>
       <mat-divider></mat-divider>
       <h3>Parameter</h3>
-      <ng-container [ngSwitch]="dashboard.spec.variables[variable.key].kind">
-        <ng-container *ngSwitchCase="'LabelValuesQuery'" >
+
+        <ng-container *ngIf="variable.value.kind === 'LabelValuesQuery'">
           <div class="box-container">
             <div class="key-boxed">
               label_name
             </div>
             <div class="value-boxed">
-              {{dashboard.spec.variables[variable.key].parameter.label_name}}
+              {{variable.value.parameter.label_name}}
             </div>
           </div>
           <div class="box-container">
@@ -52,19 +52,18 @@
               capturing_regexp
             </div>
             <div class="value-boxed">
-              {{dashboard.spec.variables[variable.key].parameter.capturing_regexp}}
+              {{variable.value.parameter.capturing_regexp}}
             </div>
           </div>
-          <div class="box-container" *ngIf="dashboard.spec.variables[variable.key].parameter.matchers">
+          <div class="box-container" *ngIf="variable.value.parameter.matchers">
             <div class="key-boxed">
               matchers
             </div>
             <div class="value-boxed">
-              {{dashboard.spec.variables[variable.key].parameter.matchers}}
+              {{variable.value.parameter.matchers}}
             </div>
           </div>
         </ng-container>
-      </ng-container>
     </mat-card>
   </div>
 
